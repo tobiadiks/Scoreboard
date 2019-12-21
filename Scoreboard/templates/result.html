@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Author: Adeleke Oluwatobi
+     Email: tobiadiks@gmail.com
+     
+    -->
+<html>
+{%load static%}
+
+<title>SCOREBOARD</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="{%static 'css/w3.css' %}">
+<head>
+</head>
+<body>
+
+<div class="w3-dark-grey w3-container">
+<div class="w3-right">
+<ul>
+<li><a   href="{%url 'result' %}" ><b>Refresh</b></a></li>
+ </ul>
+ </div> 
+ 
+ <img class="w3-card-4 w3-animate-top" src="{%static 'icon/ico.jpg' %}" alt="ico.png" width="30%">
+ 
+ </div>
+
+ 
+ <table class="w3-table w3-round w3-card w3-grey w3-striped w3-card-4 w3-hoverable w3-animate-zoom" >
+<thead><h1 class="w3-animate-opacity w3-text-grey w3-border w3-card" align="center"><strong>RESULTS</strong></h1>
+</thead>
+<tr>
+  <td><strong>Clubs</strong></td>
+  <td><strong>Score</strong></td>
+  </tr>
+ {% for score in object_list %}
+<tr>
+   <td>{{score.club1}} <b>VS</b> {{score.club2}}</td>
+   <td>{{score.club1score}} : {{score.club2score}}</td>
+</tr>
+{% endfor %}
+  
+</table>
+
+  
+</body>
+
+<footer align="center" class="w3-container  w3-dark-grey"><p>
+
+<!--<button class=" w3-btn w3-hover w3-round w3-light-grey w3-card"><a href="./Login" ><strong>Sign-Out</strong></a></button>
+-->
+ <p>© PinTecH-Frontenders inc </p></p>
+</footer>
+</html>
